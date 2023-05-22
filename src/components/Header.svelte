@@ -19,4 +19,6 @@
     padding: 20px;
     max-width: 1024px;
   }
+
+  
 </style>

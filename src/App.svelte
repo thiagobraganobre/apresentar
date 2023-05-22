@@ -1,6 +1,5 @@
 <script>
   import { Router, Route } from 'svelte-navigator';
-
   import Header from './components/Header.svelte';
   import Footer from './components/Footer.svelte';
 
@@ -15,6 +14,8 @@
     <Route path="/">
       <Quiz />
     </Route>
+    
+    <Route path="quiz" component={Quiz} />
     <Route path="report" component={Report} />
   </main>
   <Footer />

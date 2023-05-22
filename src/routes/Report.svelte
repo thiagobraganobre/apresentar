@@ -13,7 +13,6 @@
 <Table>
   <thead>
     <tr>
-      <th>#</th>
       <th>Tipo</th>
       <th>Gênero</th>
       <th>Etnia</th>
@@ -24,7 +23,6 @@
       
       {#each data as record}
           <tr>
-            <th scope="row">{record.rowid}</th>
             <td>{record.employment_type}</td>
             <td>{record.gender}</td>
             <td>{record.ethnic_group}</td>
