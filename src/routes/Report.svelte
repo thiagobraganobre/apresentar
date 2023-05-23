@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   let data = [];
   onMount(async function() {
-    const response = await fetch("http://localhost:8080/report.json");
+    const response = await fetch("http://localhost:9000/report");
     const json = await response.json();
     data = json;
     console.log(data);

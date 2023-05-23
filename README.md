@@ -4,3 +4,5 @@
 # cd svelte-app
 # npm install
 # npm run dev
+# na pasta do backend php -S localhost:9000
+# http://localhost:9000/quiz.php
