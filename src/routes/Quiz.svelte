@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form, FormGroup, Input, Label, Button, Toast, Styles } from 'sveltestrap';
+  import { Alert, Form, FormGroup, Input, Label, Button, Toast, Styles } from 'sveltestrap';
   import { onMount } from "svelte";
   
   
@@ -59,21 +59,23 @@
 	let respostaSalvo = ''
 	async function doSave (event) {
     event.preventDefault()
+
+    
 		const res = await fetch('http://localhost:9000/quiz', {
 			method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-			data: 
-        {
-          "employment_type": vinculo,
-          "gender": genero,
-          "ethnic_group": etnia,
-          "sexual_orientation": sexualidade
-        }
+        redirect: 'follow',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'}, 
+			body: 
+        new URLSearchParams({
+          employment_type: vinculo,
+          gender: genero,
+          ethnic_group: etnia,
+          sexual_orientation: sexualidade
+        })
 		})
 		
 		const json = await res.json()
+
 		respostaSalvo = JSON.stringify(json)
 
 
@@ -85,9 +87,11 @@
 <Styles />
 
 <h1>QUESTIONÁRIO</h1>
-<pre>
-{respostaSalvo}
-</pre>
+{#if respostaSalvo!=""}
+  <Alert primary>
+    <h5 class="alert-heading text-capitalize">{respostaSalvo}</h5>
+  </Alert>
+{/if}
 
 
 <Form>
