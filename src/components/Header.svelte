@@ -1,24 +1,31 @@
 <script>
-  import { Link } from 'svelte-navigator';
+  import { Link } from 'svelte-navigator';  
+  import { Styles, Navbar, NavbarBrand, Nav, NavItem, NavLink  } from 'sveltestrap';
 </script>
+
+<Styles />
+
+  <Navbar
+    color="success"
+  >
+    <NavbarBrand href="/"><div class="linker">POC</div></NavbarBrand>
+    <Nav>
+      <NavItem>
+        <NavLink href="#"><Link to="quiz"><div class="linker">Quiz</div></Link></NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#"><Link to="report"><div class="linker">Report</div></Link></NavLink>
+      </NavItem>
+    </Nav>
+
+  </Navbar>
 
 
 <header>
-  <nav>
-    <Link to="quiz">Quiz</Link>
-    <Link to="report">Report</Link>
-  </nav>
 </header>
 
-
 <style>
-  header {
-    background: #eeeeee;
-    width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 1024px;
-  }
-
-  
+.linker{
+   color:white;
+}
 </style>

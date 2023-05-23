@@ -86,9 +86,10 @@
 <!-- Aqui abaixo esta a chamado ao bootstrap -->
 <Styles />
 
-<h1>QUESTIONÁRIO</h1>
+<br><br>
+<h1>QUIZ</h1>
 {#if respostaSalvo!=""}
-  <Alert primary>
+  <Alert color="primary" dismissible>
     <h5 class="alert-heading text-capitalize">{respostaSalvo}</h5>
   </Alert>
 {/if}
@@ -96,7 +97,7 @@
 
 <Form>
   <FormGroup>
-    <Label for="vinculo">Qual seu tipo de vínculo</Label>
+    <Label for="vinculo"><b>Qual seu tipo de vínculo com a PGE?</b></Label>
     <Input type="select" name="employment_type" id="vinculo" bind:value={vinculo}>
       {#each lstVinculo as record}
             <option value="{record.employment_type}">{record.employment_type}</option>
@@ -105,7 +106,7 @@
   </FormGroup>
 
   <FormGroup>
-    <Label for="genero">Qual gênero</Label>
+    <Label for="genero"><b>Qual seu gênero?</b></Label>
     <Input type="select" name="gender" id="genero" bind:value={genero}>
       {#each lstGenero as record}
             <option value="{record.gender}">{record.gender}</option>
@@ -114,7 +115,7 @@
   </FormGroup>
 
   <FormGroup>
-    <Label for="etnia">Qual etnia</Label>
+    <Label for="etnia"><b>Qual sua etnia?</b></Label>
     <Input type="select" name="ethnic_group" id="etnia" bind:value={etnia}>
       {#each lstEtnia as record}
             <option value="{record.ethnic_group}">{record.ethnic_group}</option>
@@ -123,7 +124,7 @@
   </FormGroup>
 
   <FormGroup>
-    <Label for="sexual">Qual sua orientação sexual</Label>
+    <Label for="sexual"><b>Qual sua orientação sexual?</b></Label>
     <Input type="select" name="sexual_orientation" id="sexual" bind:value={sexualidade}>
       {#each lstSexualidade as record}
             <option value="{record.sexual_orientation}">{record.sexual_orientation}</option>

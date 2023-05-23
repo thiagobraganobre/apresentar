@@ -18,7 +18,7 @@
     <Route path="quiz" component={Quiz} />
     <Route path="report" component={Report} />
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </Router>
 
 
